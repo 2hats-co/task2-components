@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 const App = () => {
 
-
     return (
       <div className="App">
-        <Counter/>
+        <Counter initialCount={0}/>
       </div>
     );
 
@@ -16,10 +15,9 @@ function Counter({initialCount}) {
   const [count, setCount] = useState(initialCount);
   return (
     <>
-      Count: {count}
-      <button id="increment-button" onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
-      <div id="number">{this.state.count}</div>
       <button id="decrement-button" onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
+      <div id="number">{count}</div>
+      <button id="increment-button" onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
     </>
   );
 }
@@ -27,7 +25,7 @@ function Counter({initialCount}) {
 export default App;
 
 
-/* v1.0
+/******** Class version **********
 class App extends React.PureComponent {
   state = {
     count: 0,
