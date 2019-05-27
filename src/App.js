@@ -1,14 +1,11 @@
 import React from 'react';
+import Counter from './Counter';
 import './App.css';
 
 const App = () => {
-  const count = 0;
-
   return (
     <div className="App">
-      <button id="decrement-button">−</button>
-      <div id="number">{count}</div>
-      <button id="increment-button">+</button>
+      <Counter min={0} max={10}/>
     </div>
   );
 };
