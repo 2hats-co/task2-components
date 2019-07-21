@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
-const App = () => {
-  const count = 0;
+function App() {
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
-      <button id="decrement-button">−</button>
+      <button onClick={() => setCount(count - 1)}
+        id="decrement-button">−</button>
       <div id="number">{count}</div>
-      <button id="increment-button">+</button>
+      <button
+        onClick={() => setCount(count + 1)}
+        id="increment-button">+</button>
     </div>
   );
-};
+
+}
 
 export default App;
